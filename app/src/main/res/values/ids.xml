@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="action_websearch" type="id">Web Search</item>
+    <item name="home_screen_title" type="id">home_scree_title</item>
+    <item name="home_screen_description1" type="id">home_screen_description1</item>
+</resources>

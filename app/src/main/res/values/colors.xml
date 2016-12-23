@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#4CAF50</color>
+    <color name="colorPrimaryDark">#388E3C</color>
+    <color name="colorTextBrightGreen">#8BC34A </color>
+    <color name="textBackgroundLightGreen">#cdf2a0</color>
+    <color name="colorTextBlack">#000000 </color>
+    <color name="backgroundColorHomeBottomLayout">#D1D0CE </color>
+    <color name="textBackgroundLightGray">#d6d5d4</color>
+    <color name="colorTextWhite">#FFFFFF </color>
+    <color name="textColorHomeBottomLayout">#FF4500 </color>
+    <color name="colorTextBrightGray">#736F6E </color>
+    <color name="bright_foreground_disabled_holo_dark">#ff4c4c4c</color>
+</resources>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--xmlns:tools="http://schemas.android.com/tools">-->
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/action_search_recipe"
+            android:actionViewClass="android.widget.SearchView"
+            android:icon="@android:drawable/ic_menu_search"
+            android:title="@string/search_recipe"/>
+
+        <item
+            android:id="@+id/action_my_recipes"
+            android:title="@string/action_my_recipes"
+            android:icon="@drawable/ic_action_home"/>
+
+        <item
+            android:id="@+id/action_favorites"
+            android:title="@string/heading_favorites"
+            android:icon="@drawable/ic_heart"/>
+
+        <!--<item-->
+            <!--android:id="@+id/action_create_recipe"-->
+            <!--android:title="@string/action_create_recipe" />-->
+
+        <!--<item-->
+            <!--android:id="@+id/action_add_recipe"-->
+            <!--android:title="@string/action_add_recipe" />-->
+
+        <item
+            android:id="@+id/action_logout"
+            android:title="@string/action_logout"
+            android:icon="@drawable/ic_close_grey600_18dp"/>
+
+    </group>
+
+
+    <!--<item-->
+        <!--android:id="@+id/action_all"-->
+        <!--android:title="@string/action_all"-->
+        <!--app:showAsAction="always"/>-->
+    <!--<item-->
+        <!--android:id="@+id/action_menu"-->
+        <!--android:icon="@drawable/ic_action_menu"-->
+        <!--android:title="@string/action_menu"-->
+        <!--app:showAsAction="always"/>-->
+
+    <!--<item-->
+        <!--android:id="@+id/action_menu_down"-->
+        <!--android:icon="@drawable/ic_action_menu_down"-->
+        <!--android:title="@string/action_menu_down"-->
+        <!--app:showAsAction="always"/>-->
+
+    <!--<item-->
+        <!--android:id="@+id/action_search_bar"-->
+        <!--android:icon="@drawable/ic_action_magnify"-->
+        <!--android:title="@string/action_search_bar"-->
+        <!--app:showAsAction="always|collapseActionView"-->
+        <!--app:actionViewClass="android.support.v7.widget.SearchView"/>-->
+
+    <!--<item-->
+        <!--android:id="@+id/action_sort_variant"-->
+        <!--android:icon="@drawable/ic_action_sort_variant"-->
+        <!--android:title="@string/action_sort_variant"-->
+        <!--app:showAsAction="always"/>-->
+
+    <!--<item-->
+        <!--android:id="@+id/action_search_recipe"-->
+        <!--android:orderInCategory="99"-->
+        <!--android:actionViewClass="android.widget.SearchView"-->
+        <!--android:icon="@android:drawable/ic_menu_search"-->
+        <!--android:title="@string/search_recipe"/>-->
+
+    <!--<item-->
+        <!--android:id="@+id/action_my_recipes"-->
+        <!--android:orderInCategory="100"-->
+        <!--android:title="@string/action_my_recipes"-->
+        <!--android:icon="@drawable/ic_action_home"/>-->
+
+    <!--<item-->
+        <!--android:id="@+id/action_create_recipe"-->
+        <!--android:orderInCategory="101"-->
+        <!--android:title="@string/action_create_recipe" />-->
+
+    <!--<item-->
+        <!--android:id="@+id/action_add_recipe"-->
+        <!--android:orderInCategory="102"-->
+        <!--android:title="@string/action_add_recipe" />-->
+
+    <!--<item-->
+        <!--android:id="@+id/action_settings"-->
+        <!--android:orderInCategory="105"-->
+        <!--android:title="@string/action_settings" />-->
+
+    <!--<item-->
+        <!--android:id="@+id/action_help"-->
+        <!--android:orderInCategory="106"-->
+        <!--android:title="@string/action_help" />-->
+
+    <!--<item-->
+        <!--android:id="@+id/action_about"-->
+        <!--android:orderInCategory="107"-->
+        <!--android:title="@string/action_about" />-->
+
+    <!--<item-->
+        <!--android:id="@+id/action_logout"-->
+        <!--android:orderInCategory="108"-->
+        <!--android:title="@string/action_logout" />-->
+
+</menu>
