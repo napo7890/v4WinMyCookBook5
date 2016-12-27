@@ -7,14 +7,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import v3.com.mycookbook5.R;
 import v3.com.mycookbook5.RecipeDetailActivity;
-import v3.com.mycookbook5.SearchRecipeClickListener;
 
 public class SearchRecipeAdapter extends RecyclerView.Adapter<SearchRecipeAdapter.ViewHolder> {
 
@@ -53,9 +50,6 @@ public class SearchRecipeAdapter extends RecyclerView.Adapter<SearchRecipeAdapte
         viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                final int pos = viewHolder.getLayoutPosition();
-//                recipeKey = recipeKeyList.get(pos);
-
                 recipeKey = recipeKeyList.get(position);
                 //Toast.makeText(context, recipeKey, Toast.LENGTH_SHORT).show();
                 launchDetailActivity(recipeKey);

@@ -416,7 +416,7 @@ public class CreateRecipeActivity extends BaseActivity implements View.OnClickLi
 
     private void writeNewRecipe(String userId, String username, String imageUrl, String title, int cookingTime, int servings, String description, String dishType, ArrayList<String> ingredients, ArrayList<String> directions) {
         String key = databaseReference.child("recipes").push().getKey();
-        recipe = new Recipe(key, userId, username, imageUrl, title, cookingTime, servings, description, dishType, ingredients, directions);
+        recipe = new Recipe(userId, username, imageUrl, title, cookingTime, servings, description, dishType, ingredients, directions);
         Map<String, Object> recipeValues = recipe.toMap();
 
         Map<String, Object> childUpdates = new HashMap<>();
@@ -428,7 +428,7 @@ public class CreateRecipeActivity extends BaseActivity implements View.OnClickLi
 
     private void updateRecipe(String userId, String username, String imageUrl, String title, int cookingTime, int servings, String description, String dishType, ArrayList<String> ingredients, ArrayList<String> directions) {
         String key = databaseReference.child("recipes").child(recipeKey).getKey();
-        recipe = new Recipe(key, userId, username, imageUrl, title, cookingTime, servings, description, dishType, ingredients, directions);
+        recipe = new Recipe(userId, username, imageUrl, title, cookingTime, servings, description, dishType, ingredients, directions);
         Map<String, Object> recipeValues = recipe.toMap();
 
         Map<String, Object> childUpdates = new HashMap<>();

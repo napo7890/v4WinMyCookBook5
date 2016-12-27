@@ -33,7 +33,7 @@ public class SearchRecipeActivity extends BaseActivity {
     public SearchView search;
     private SearchRecipeAdapter mAdapter;
     private List<String> recipeTitleList, recipeKeyList;
-    private String recipeKey;
+    //private String recipeKey;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,23 +62,30 @@ public class SearchRecipeActivity extends BaseActivity {
                 Map<String, Object> value = (Map<String, Object>) dataSnapshot.getValue();
                 String recipeTitle = String.valueOf(value.get("title"));
                 recipeTitleList.add(recipeTitle);
-                recipeKey = String.valueOf(value.get("recipeUid"));
+                String recipeKey = dataSnapshot.getKey();
                 recipeKeyList.add(recipeKey);
-
-                //Toast.makeText(SearchRecipeActivity.this, recipeKeyList.toString(), Toast.LENGTH_SHORT).show();
-
+                //recipeKey = String.valueOf(value.get("recipeUid"));
+                //Toast.makeText(SearchRecipeActivity.this, recipeKey, Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+                Log.d("TAG", "onChildChanged:" + dataSnapshot.getKey());
+//                String recipeKey = dataSnapshot.getKey();
+//                recipeKeyList.add(recipeKey);
             }
 
             @Override
             public void onChildRemoved(DataSnapshot dataSnapshot) {
+                Log.d("TAG", "onChildRemoved:" + dataSnapshot.getKey());
             }
 
             @Override
             public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+                Log.d("TAG", "onChildMoved:" + dataSnapshot.getKey());
+                recipeKeyList = new ArrayList<>();
+                String recipeKey = dataSnapshot.getKey();
+                recipeKeyList.add(recipeKey);
             }
 
             @Override

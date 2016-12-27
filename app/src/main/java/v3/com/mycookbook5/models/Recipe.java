@@ -20,8 +20,8 @@ public class Recipe {
         // Default constructor required for calls to DataSnapshot.getValue(Recipe.class)
     }
 
-    public Recipe(String recipeUid, String uid, String username, String imageUrl, String title, int cookingTime, int servings, String description /*, int rating */, String dishType, ArrayList<String> ingredients, ArrayList<String> directions) {
-        this.recipeUid = recipeUid;
+    public Recipe(/*String recipeUid,*/ String uid, String username, String imageUrl, String title, int cookingTime, int servings, String description /*, int rating */, String dishType, ArrayList<String> ingredients, ArrayList<String> directions) {
+        //this.recipeUid = recipeUid;
         this.uid = uid;
         //this.username = username;
         this.imageUrl = imageUrl;
@@ -40,7 +40,7 @@ public class Recipe {
     @Exclude
     public Map<String, Object> toMap() {
         HashMap<String, Object> result = new HashMap<>();
-        result.put("recipeUid", recipeUid);
+        //result.put("recipeUid", recipeUid);
         result.put("uid", uid);
         result.put("username", username);
         result.put("imageUrl", imageUrl);

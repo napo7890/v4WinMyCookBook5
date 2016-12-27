@@ -304,10 +304,6 @@ public class RecipeDetailActivity extends BaseActivity implements View.OnClickLi
         startActivityForResult(intent, UPDATE_REQUEST_CODE);
         //startActivityForResult(intent, DESCRIPTION_REQUEST_CODE);
 
-        Intent searchIntent = new Intent(this, SearchRecipeActivity.class);
-        intent.putExtra(CreateRecipeActivity.RECIPE_KEY, recipeKey);
-        startActivityForResult(searchIntent, UPDATE_REQUEST_CODE);
-
     }
 
 }
