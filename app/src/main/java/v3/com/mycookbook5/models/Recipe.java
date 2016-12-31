@@ -23,6 +23,7 @@ public class Recipe {
     public Recipe(/*String recipeUid,*/ String uid, String username, String imageUrl, String title, int cookingTime, int servings, String description /*, int rating */, String dishType, ArrayList<String> ingredients, ArrayList<String> directions) {
         //this.recipeUid = recipeUid;
         this.uid = uid;
+        //this.isUser = isUser;
         //this.username = username;
         this.imageUrl = imageUrl;
         //this.imageUrl = getLargeImageUrl(imageUrl);
@@ -54,6 +55,7 @@ public class Recipe {
         result.put("dishType", dishType);
         result.put("ingredients", ingredients);
         result.put("directions", directions);
+        result.put(uid, true);
         return result;
     }
 //    public String getLargeImageUrl(String imageUrl) {

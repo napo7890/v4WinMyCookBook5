@@ -22,5 +22,4 @@ public abstract class ExploreListFragment extends BaseFragment {
 
     public abstract Query getExploreQuery(DatabaseReference databaseReference);
 
-
 }
