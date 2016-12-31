@@ -77,7 +77,7 @@ public class SearchRecipeAdapter extends RecyclerView.Adapter<SearchRecipeAdapte
         }
     }
 
-    private void launchDetailActivity(String recipeKey) {
+    public void launchDetailActivity(String recipeKey) {
         Intent intent = new Intent(context, RecipeDetailActivity.class);
         intent.putExtra(RecipeDetailActivity.EXTRA_RECIPE_KEY, recipeKey);
         context.startActivity(intent);

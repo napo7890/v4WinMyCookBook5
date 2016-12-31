@@ -15,6 +15,9 @@ public class FavoritesFragment extends FavoritesListFragment {
     @Override
     public Query getFavoritesQuery(DatabaseReference databaseReference) {
 
+//        return databaseReference.child("recipes").orderByChild(getUid()).equalTo(null);
+
+
         String userId = databaseReference.child(getUid()).getKey();
         //Toast.makeText(getContext(), userId, Toast.LENGTH_LONG).show();
 

@@ -13,6 +13,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import v3.com.mycookbook5.fragment.ExploreFragment;
 import v3.com.mycookbook5.fragment.FavoritesFragment;
 import v3.com.mycookbook5.fragment.RecipeFragment;
 
@@ -28,7 +29,7 @@ public class MainActivity extends BaseActivity {
 
         /** Initialize Database */
         databaseReference = FirebaseDatabase.getInstance().getReference()
-                .child("user-recipes");
+                .child("recipes");
 
         final String userId = getUid();
         databaseReference.child(userId).addListenerForSingleValueEvent(new ValueEventListener() {
@@ -52,10 +53,12 @@ public class MainActivity extends BaseActivity {
                         private final Fragment[] mFragments = new Fragment[]{
                                 new RecipeFragment(),
                                 new FavoritesFragment(),
+                                new ExploreFragment(),
                         };
                         private final String[] mFragmentNames = new String[]{
                                 getString(R.string.heading_my_recipes),
                                 getString(R.string.heading_favorites),
+                                getString(R.string.heading_explore),
                         };
 
                         @Override

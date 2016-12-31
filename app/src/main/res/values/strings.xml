@@ -36,6 +36,7 @@
     <string name="action_logout">Logout</string>
     <string name="heading_my_recipes">My Recipes</string>
     <string name="heading_favorites">Favorites</string>
+    <string name="heading_explore">Explore</string>
     <string name="heading_summary">SUMMARY</string>
     <string name="heading_ingredients">INGREDIENTS</string>
     <string name="heading_directions">DIRECTIONS</string>
@@ -77,6 +78,6 @@
     <string name="dish_type_dessert">Dessert</string>
     <string name="dish_type_other">Other</string>
     <string name="like">Like</string>
-    <string name="what_do_you_want_to_make_today">What do you want to make today?</string>
+    <string name="what_do_you_want_to_cook_today">What do you want to cook today?</string>
     <string name="update_recipe">Update Recipe</string>
 </resources>

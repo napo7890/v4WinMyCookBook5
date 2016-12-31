@@ -1,39 +1,26 @@
 package v3.com.mycookbook5;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-import android.view.View;
 import android.widget.SearchView;
-import android.widget.Toast;
-
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
-
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import v3.com.mycookbook5.models.Recipe;
 import v3.com.mycookbook5.ui.DividerItemDecoration;
 import v3.com.mycookbook5.viewholder.SearchRecipeAdapter;
-
-import static android.R.attr.key;
-import static android.content.Intent.getIntent;
 
 public class SearchRecipeActivity extends BaseActivity {
     private RecyclerView mRecyclerView;
     public SearchView search;
     private SearchRecipeAdapter mAdapter;
     private List<String> recipeTitleList, recipeKeyList;
-    //private String recipeKey;
+    private String recipeKey;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,7 +49,8 @@ public class SearchRecipeActivity extends BaseActivity {
                 Map<String, Object> value = (Map<String, Object>) dataSnapshot.getValue();
                 String recipeTitle = String.valueOf(value.get("title"));
                 recipeTitleList.add(recipeTitle);
-                String recipeKey = dataSnapshot.getKey();
+
+                recipeKey = dataSnapshot.getKey();
                 recipeKeyList.add(recipeKey);
                 //recipeKey = String.valueOf(value.get("recipeUid"));
                 //Toast.makeText(SearchRecipeActivity.this, recipeKey, Toast.LENGTH_SHORT).show();
@@ -70,22 +58,18 @@ public class SearchRecipeActivity extends BaseActivity {
 
             @Override
             public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-                Log.d("TAG", "onChildChanged:" + dataSnapshot.getKey());
-//                String recipeKey = dataSnapshot.getKey();
-//                recipeKeyList.add(recipeKey);
+                //Log.d("TAG", "onChildChanged:" + dataSnapshot.getKey());
             }
 
             @Override
             public void onChildRemoved(DataSnapshot dataSnapshot) {
-                Log.d("TAG", "onChildRemoved:" + dataSnapshot.getKey());
+                //Log.d("TAG", "onChildRemoved:" + dataSnapshot.getKey());
             }
 
             @Override
             public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-                Log.d("TAG", "onChildMoved:" + dataSnapshot.getKey());
-                recipeKeyList = new ArrayList<>();
-                String recipeKey = dataSnapshot.getKey();
-                recipeKeyList.add(recipeKey);
+                //Log.d("TAG", "onChildMoved:" + dataSnapshot.getKey());
+
             }
 
             @Override
@@ -106,36 +90,31 @@ public class SearchRecipeActivity extends BaseActivity {
             query = query.toLowerCase();
 
             final List<String> filteredTitleList = new ArrayList<>();
-            //final List<String> filteredKeyList = new ArrayList<>();
+            final List<String> filteredKeyList = new ArrayList<>();
 
             for (int i = 0; i < recipeTitleList.size(); i++) {
                 final String title = recipeTitleList.get(i).toLowerCase();
+                final String recKey = recipeKeyList.get(i);
                 if (title.contains(query)) {
-                    filteredTitleList.add(recipeTitleList.get(i));
-//                    //for (int a = 0; a < i; a++) {
-//                        for (int a = 0; a < recipeKeyList.size(); a++) {
-//                        filteredKeyList.add(recipeKeyList.get(a));
-//
-//                        //System.out.println(recipeTitleList.get(i));
-//                    }
+                    filteredTitleList.add(title);
+                    filteredKeyList.add(recKey);
                 }
             }
-
             mRecyclerView.setLayoutManager(new LinearLayoutManager(SearchRecipeActivity.this));
-            mAdapter = new SearchRecipeAdapter(filteredTitleList, recipeKeyList, SearchRecipeActivity.this);
+            mAdapter = new SearchRecipeAdapter(filteredTitleList, filteredKeyList, SearchRecipeActivity.this);
             mRecyclerView.setAdapter(mAdapter);
             mAdapter.notifyDataSetChanged();  // data set changed
             return true;
         }
 
-
         public boolean onQueryTextSubmit(String query) {
             //launchDetailActivity(recipeKey);
+            //mAdapter.launchDetailActivity(recipeKey);
 
             return true;
         }
     };
-//
+
 //   private void launchDetailActivity(String recipeKey) {
 //        Intent intent = new Intent(this, RecipeDetailActivity.class);
 //        intent.putExtra(RecipeDetailActivity.EXTRA_RECIPE_KEY, recipeKey);

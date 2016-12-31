@@ -49,6 +49,8 @@ import v3.com.mycookbook5.models.User;
 import v3.com.mycookbook5.viewholder.HintAdapter;
 
 import static android.R.attr.description;
+import static android.R.attr.theme;
+import static android.R.attr.track;
 
 public class CreateRecipeActivity extends BaseActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
 
@@ -403,7 +405,9 @@ public class CreateRecipeActivity extends BaseActivity implements View.OnClickLi
                         }
 
                         /** Finish this Activity, back to the stream */
-                        finish();
+                        //finish();
+                        Intent intent = new Intent(CreateRecipeActivity.this, MainActivity.class);
+                        startActivity(intent);
                     }
 
                     @Override
@@ -432,12 +436,9 @@ public class CreateRecipeActivity extends BaseActivity implements View.OnClickLi
         Map<String, Object> recipeValues = recipe.toMap();
 
         Map<String, Object> childUpdates = new HashMap<>();
-
         childUpdates.put("/recipes/" + key, recipeValues);
-
         databaseReference.updateChildren(childUpdates);
     }
-
 //    @Override
 //    public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
 //    }
